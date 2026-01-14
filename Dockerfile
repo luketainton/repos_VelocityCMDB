@@ -6,7 +6,7 @@ USER root
 
 RUN useradd -r -s /bin/bash -m velocitycmdb
 
-RUN velocitycmdb
+USER velocitycmdb
 
 # Install as service account
 RUN pip install velocitycmdb
