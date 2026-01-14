@@ -8,6 +8,8 @@ RUN useradd -r -s /bin/bash -m velocitycmdb
 
 USER velocitycmdb
 
+ENV PATH="/home/velocitycmdb/.local/bin:$PATH"
+
 # Install as service account
 RUN pip install velocitycmdb
 
