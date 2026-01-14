@@ -1,0 +1,36 @@
+name: Security
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: "@daily"
+
+jobs:
+  # sonarqube:
+  #   name: SonarQube
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Checkout repo
+  #       uses: actions/checkout@v4.2.2
+
+  #     - name: SonarQube Scan
+  #       uses: SonarSource/sonarqube-scan-action@v5.2.0
+  #       env:
+  #         SONAR_HOST_URL: ${{ secrets.SONARQUBE_HOST_URL }}
+  #         SONAR_TOKEN: ${{ secrets.SONARQUBE_TOKEN }}
+
+  snyk:
+    name: Snyk
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v6.0.1
+
+      - name: Snyk
+        uses: snyk/actions/python@master
+        continue-on-error: true
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
