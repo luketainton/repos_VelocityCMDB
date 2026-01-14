@@ -1,4 +1,4 @@
-FROM --platform=amd64 debian:13.3
+FROM --platform=amd64 python:3.14.2-slim-trixie
 
 LABEL maintainer="Luke Tainton <luke@tainton.uk>"
 
