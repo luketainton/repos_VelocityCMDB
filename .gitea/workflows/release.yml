@@ -89,7 +89,7 @@ jobs:
 
       - name: Extract metadata (tags, labels) for Docker
         id: meta
-        uses: docker/metadata-action@v5
+        uses: docker/metadata-action@v6
         with:
           tags: type=sha
           images: ${{ vars.PACKAGES_REGISTRY_URL }}/${{ gitea.repository }}
