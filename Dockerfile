@@ -1,4 +1,4 @@
-FROM --platform=amd64 python:3.14.6-slim-trixie
+FROM --platform=amd64 python:3.14.7-slim-trixie
 
 LABEL maintainer="Luke Tainton <luke@tainton.uk>"
 
